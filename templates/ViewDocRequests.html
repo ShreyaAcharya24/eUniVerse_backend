@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document Requests</title>
+
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'css/images/logos/favicon.png'}" />
+    <link rel="stylesheet" href="{% static 'css/styles.min.css' %}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+
+    <!-- Data Table CSS -->
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css'>
+    <!-- for bootstrap icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <style>
+        .custom-icon {
+            font-size: x-large;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
+
+        <!-- Sidebar Start -->
+        {% include 'sidebar.html' %}
+        <!--  Sidebar End -->
+
+        <!--  Main wrapper -->
+        <div class="body-wrapper">
+
+            <!--  Header Start -->
+            {% include 'header.html'%}
+            <!--  Header End -->
+
+            <!-- Page Body  -->
+            <div class="container-fluid">
+                <div class="container-fluid">
+                    <h5 class="card-title fw-semibold mb-4">Manage Document Requests</h5>
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="example" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Master Document ID</th>
+                                        <th>Requester Role</th>
+                                        <th>Requester ID</th>
+                                        <th>Approval Status</th>
+                                        <th>Approved By</th>
+                                        <th>Approved On</th>
+                                        <th>Request Time</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in items %}
+                                    <tr>
+
+                                        <td>{{item.doc_id}}</td>
+                                        <td>{{item.docm.docm_id}}</td>
+                                        <td>{{item.requester_role}}</td>
+                                        <td>{{item.requester_id}}</td>
+                                        <td>{{item.isapproved}}</td>
+                                        <td>{{item.approved_by}}</td>
+                                        <td>{{item.approved_on}}</td>
+                                        <td>{{item.request_time}}</td>
+                                        <td>
+                                            <a href="display.html"><i
+                                                    class="bi bi-eye-fill custom-icon text-info"></i></a>
+                                            <a
+                                                href="{% url 'approveReqEmail' item.requester_role item.requester_id item.doc_id%}"><i
+                                                    class="glyphicon glyphicon-ok-circle"></i></a>
+                                            <a
+                                                href="{% url 'approveReqEmail' item.requester_role item.requester_id item.doc_id%}"><i
+                                                    class="glyphicon glyphicon-remove-circle"></i></a>
+                                            <a
+                                                href="{% url 'approveReqEmail' item.requester_role item.requester_id item.doc_id%}"><i
+                                                    class="glyphicon glyphicon-thumbs-up"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    {% endfor %}
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Master Document ID</th>
+                                        <th>Requester Role</th>
+                                        <th>Requester ID</th>
+                                        <th>Approval Status</th>
+                                        <th>Approved By</th>
+                                        <th>Approved On</th>
+                                        <th>Request Time</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer Start -->
+        {% include 'footer.html' %}
+        <!-- Footer End -->
+
+</body>
+
+</html>

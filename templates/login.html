@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>eUni Login Page</title>
+
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'css/images/logos/favicon.png'}" />
+    <link rel="stylesheet" href="{% static 'css/styles.min.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/department_list.js' %}"></script>
+</head>
+
+<body>
+    <!--  Body Wrapper -->
+
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+        <!-- Page Body  -->
+
+        <div class="container-fluid" style="margin-top: 40px; margin-bottom: -20px;">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-body">
+                        <center>
+                            <h5 class="card-title fw-semibold mb-4">Welcome to GLS eUniVerse !!</h5>
+                        </center>
+                        {% if error %}
+                        <div class="alert alert-danger">
+                            {{ error }}
+                        </div>
+                        {% endif %}
+
+                        <div class="card">
+                            <div class="card-body">
+                                <form action="{% url 'adminlogin' %}" method="POST">
+
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" name="email">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="text" class="form-control" name="password">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <center><button type="submit" class="btn btn-primary">Login</button>
+                                        </center>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Footer Start -->
+        {% include 'footer.html' %}
+        <!-- Footer End -->
+
+</body>
+
+</html>

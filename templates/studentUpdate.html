@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{title}}</title>
+
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'css/images/logos/favicon.png'}" />
+    <link rel="stylesheet" href="{% static 'css/styles.min.css' %}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+
+    <!-- Data Table CSS -->
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css'>
+    <!-- for bootstrap icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        .custom-icon {
+            font-size: x-large;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
+
+        <!-- Sidebar Start -->
+        {% include 'sidebar.html' %}
+        <!--  Sidebar End -->
+
+        <!--  Main wrapper -->
+        <div class="body-wrapper">
+
+            <!--  Header Start -->
+            {% include 'header.html'%}
+            <!--  Header End -->
+
+            <!-- Page Body  -->
+            <div class="container-fluid">
+                <div class="container-fluid">
+                    <h5 class="card-title fw-semibold mb-4">Update Student</h5>
+                    <div class="card">
+                        <div class="card-body">
+
+                            <form action="{% url 'updateStudentDetails' items.id %}" method="post">
+
+                                <div class="mb-3">
+                                    <label for="enrolment_no" class="form-label">Enrolment No</label>
+                                    <input type="text" class="form-control" name="enrolment_no"
+                                        value="{{ items.enrolment_no}}" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="first_name" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" name="first_name"
+                                        value="{{ items.first_name}}" />
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="middle_name" class="form-label">Middle Name</label>
+                                    <input type="text" class="form-control" name="middle_name"
+                                        value="{{ items.middle_name}}" />
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="last_name" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" name="last_name"
+                                        value="{{ items.last_name}}" />
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="contact" class="form-label">Contact</label>
+                                    <input type="text" class="form-control" name="contact" value="{{ items.contact}}" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Mail</label>
+                                    <input type="text" class="form-control" name="email" value="{{items.email}}" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="isactive" class="form-label">Active Status</label>
+                                    <select class="form-control" id="isactive" name="isactive">
+                                        <option value="Y" {% if items.isactive == 'Y' %} selected {% endif %}>Yes</option>
+                                        <option value="N" {% if items.isactive == 'N' %} selected {% endif %}>No</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="street" class="form-label">Street Name</label>
+                                    <input type="text" class="form-control" name="street"
+                                        value="{{ items.street_name}}" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="city" class="form-label">City</label>
+                                    <input type="text" class="form-control" name="city" value="{{ items.city}}" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="pin" class="form-label">Pincode</label>
+                                    <input type="text" class="form-control" name="pin" value="{{ items.pin}}" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="state" class="form-label">Status</label>
+                                    <input type="text" class="form-control" name="state" value="{{ items.state}}" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="division" class="form-label">Select Division</label>
+                                    <select class="form-control" name="division">
+                                        {% for division in divisions %}
+                                            <option value="{{ division.div_id }}" {% if division.div_id == student.div.div_id %} selected {% endif %}>{{ division.div_name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            
+                                <div class="mb-3">
+                                    <label for="batch" class="form-label">Select Batch</label>
+                                    <select class="form-control" id="batch" name="batch">
+                                        {% for batch in batches %}
+                                            <option value="{{ batch.batch_id }}" {% if batch.batch_id == student.div.batch.batch_id %} selected {% endif %}>{{ batch.start_year }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            
+                                <div class="mb-3">
+                                    <label for="program" class="form-label">Select Program</label>
+                                    <select class="form-control" id="program" name="program">
+                                        {% for program in programs %}
+                                            <option value="{{ program.program_id }}" {% if program.program_id == student.dib.batch.program.program_id %} selected {% endif %}>{{ program.program_abbr }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            
+                                <div class="mb-3">
+                                    <label for="department" class="form-label">Select Department</label>
+                                    <select class="form-control" id="department" name="department">
+                                        {% for department in departments %}
+                                            <option value="{{ department.dep_id }}" {% if department.dep_id == student.div.batch.program.dep.dep_id %} selected {% endif %}>{{ department.dep_name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Start -->
+        {% include 'footer.html' %}
+        <!-- Footer End -->
+
+</body>
+
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="CodeHim">
+    <title> Responsive & sortable Bootstrap data table Example </title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <!-- Demo CSS (No need to include it into your project) -->
+    <link rel="stylesheet" href="./css/demo.css">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <!-- Data Table CSS -->
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css'>
+    <!-- Font Awesome CSS -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <!-- for bootstrap icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .custom-icon {
+            font-size: x-large;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <header class="cd__intro">
+         <h1> Responsive & sortable Bootstrap data table Example </h1>
+         <p> Responsive & sortable Bootstrap data table </p>
+         <div class="cd__action">
+            <a href="https://www.codehim.com/bootstrap/bootstrap-5-table-with-pagination-and-search-and-sorting" title="Back to download and tutorial page" class="cd__btn back">Back to Tutorial</a>
+         </div>
+      </header> -->
+    <!--$%adsense%$-->
+    <main class="cd__main">
+        <!-- Start DEMO HTML (Use the following code into your project)-->
+        <table id="example" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Enrollment No.</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2023800100156</td>
+                    <td>Poojan</td>
+                    <td>Kumar</td>
+                    <td>Soni</td>
+                    <td>pooj@gmail.com</td>
+                    <td>
+                        <a href="display.html"><i class="bi bi-eye-fill custom-icon text-info"></i></a>
+                        <a href="update.html"><i class="bi bi-pencil custom-icon text-success"></i></a>
+                        <a href="" class="deleteBtn"><i class="bi bi-trash3 custom-icon text-danger"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Enrollment No.</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </tfoot>
+        </table>
+        <!-- END EDMO HTML (Happy Coding!)-->
+        <!-- delete fuction -->
+        <script>
+            // document.addEventListener('DOMContentLoaded', function () {
+            //     const deleteBtn = document.querySelectorAll('deleteBtn');
+
+            //     deleteBtn.addEventListener('click', function () {
+            //         const confirmed = confirm('Are you sure you want to delete this record?');
+
+            //         if (confirmed) {
+            //             // Perform delete action
+            //             alert('Record deleted successfully!');
+            //         } else {
+            //             // Cancel delete action
+            //             alert('Delete action canceled.');
+            //         }
+            //     });
+            // });
+            // Function to handle delete button click
+function handleDeleteButtonClick(event) {
+  const confirmation = confirm('Are you sure you want to delete this record?');
+  if (confirmation) {
+    // Perform delete operation here
+    alert('Record deleted successfully!');
+    const row = event.target.closest('tr');
+    row.remove();
+  }
+  else{
+    alert('Delete action canceled.');
+  }
+}
+// Get all delete buttons and attach event listener
+const deleteButtons = document.querySelectorAll('.deleteBtn');
+deleteButtons.forEach(btn => {
+  btn.addEventListener('click', handleDeleteButtonClick);
+});
+
+        </script>
+    </main>
+    <!-- <footer class="cd__credit">Author: Yolanda Goex - Distributed By: <a title="Free web design code & scripts" href="https://www.codehim.com?source=demo-page" target="_blank">CodeHim</a></footer> -->
+    <!-- jQuery -->
+    <script src='https://code.jquery.com/jquery-3.7.0.js'></script>
+    <!-- Data Table JS -->
+    <script src='https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js'></script>
+    <script src='https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js'></script>
+    <script src='https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js'></script>
+    <!-- Script JS -->
+    <script src="./js/script.js"></script>
+    <!--$%analytics%$-->
+</body>
+
+</html>

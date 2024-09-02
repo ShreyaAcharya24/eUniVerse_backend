@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Create New Department</title>
+{% load static %}
+<link rel="shortcut icon" type="image/png" href="{% static 'css/images/logos/favicon.png'}" />
+<link rel="stylesheet" href="{% static 'css/styles.min.css' %}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+
+    <!-- Sidebar Start -->
+    {% include 'sidebar.html' %}
+    <!--  Sidebar End -->
+
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+
+      <!--  Header Start -->
+      {% include 'header.html'%}
+      <!--  Header End -->
+
+      <div class="container-fluid">
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title fw-semibold mb-4">Create Department</h5>
+              <div class="card">
+                <div class="card-body">
+
+                  <form action="{% url 'addDept' %}" method="post">
+
+                    <div class="mb-3">
+                      <label for="departmentName" class="form-label">Department Name</label>
+                      <input type="text" class="form-control" id="departmentName" />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="departmentAbbr" class="form-label">Department Abbreviation</label>
+                      <input type="text" class="form-control" id="departmentAbbr" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/sidebarmenu.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+</body>
+
+</html>
